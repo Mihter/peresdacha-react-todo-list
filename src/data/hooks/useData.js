@@ -5,7 +5,7 @@ import {TodoItem} from '../entity/TodoItem'
 export const useData = () => {
   const {data, isLoading} = useQuery({
     queryKey: ['todo'],
-    queryFn: LocalStorage.getTodoItemsFromLocalStorage,
+      queryFn: LocalStorage.getTodoItemsFromLocalStorage,
   });
 
   return {
@@ -33,3 +33,23 @@ export const useSaveNewTodoItem = () => {
     isSuccess
   }
 }
+
+//подключить хук мутации, вызвать метод из LS по удалению
+export const useDeleteTodoItem = () => {
+    const client = useQueryClient();
+
+    const { mutate } = useMutation({
+        mutationFn: ({ id }) => {
+            console.log("Начало удаления из LS");
+            LocalStorage.deleteTodoItemFromLocalStorage(id);
+        },
+        onSuccess: () => {
+            console.log("обновляем данные");
+            client.invalidateQueries(['todo']);
+        },
+    });
+
+    return {
+        mutate
+    };
+};

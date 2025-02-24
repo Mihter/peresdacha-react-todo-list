@@ -31,12 +31,16 @@ export const TodoItems = () => {
 
 
   const todoItemsElements = filteredBySearchItems.map((item, index) => {
-    return <TodoItem key={item.id} title={item.title} checked={item.isDone} />;
+      if (item && item.title) {
+          return <TodoItem key={item.id} id={item.id} title={item.title} checked={item.isDone} />;
+      }
+      return <TodoItem key={22} id={1} title={'item.title'} checked={true} />;//тут были шаманские фокусы т.к. как то попал null элемент в LS и 
+                                                                              //слишком долго пытался как - то это пофиксить в итоге просто сбросил хранилище
   });
 
   return (
     <TodoItemsContainer>
-      <SearchInput value={searchValue} />
+          <SearchInput value={searchValue} setValue={setSearchValue} />
       {todoItemsElements}
       <NewTodoItem />
     </TodoItemsContainer>
