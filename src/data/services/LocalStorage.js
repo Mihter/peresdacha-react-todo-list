@@ -43,5 +43,25 @@ export const LocalStorage = {
                 resolve();
             }).catch(reject);
         });
+    },
+
+    //метод по обновлению отметки
+    updateTodoItemFromLocalStorage: (id, checked) =>
+    {
+        return new Promise((resolve, reject) =>
+        {
+            LocalStorage.getTodoItemsFromLocalStorage().then((todoItems) =>
+            {
+                const newTodoItems = todoItems.map(item =>
+                    item.id === id ? {
+                        id: item.id,
+                        title: item.title,
+                        isDone: checked
+                    } : item
+                );
+                localStorage.setItem(TODO_ITEMS_LOCAL_STORAGE_KEY, JSON.stringify(newTodoItems));
+                resolve();
+            }).catch(reject);
+        })
     }
 }

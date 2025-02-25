@@ -53,3 +53,23 @@ export const useDeleteTodoItem = () => {
         mutate
     };
 };
+
+export const useUpdateTodoItem = () =>
+{
+    const client = useQueryClient();
+
+    const { mutate } = useMutation({
+        mutationFn: ({ id, checked }) => {
+            console.log("Начало обновления");
+            LocalStorage.updateTodoItemFromLocalStorage(id, checked);
+        },
+        onSuccess: () => {
+            console.log("обновляем данные");
+            client.invalidateQueries(['todo']);
+        },
+    });
+
+    return {
+        mutate
+    };
+}
