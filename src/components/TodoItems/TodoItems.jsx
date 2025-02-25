@@ -32,9 +32,9 @@ export const TodoItems = () => {
 
   const todoItemsElements = filteredBySearchItems.map((item, index) => {
       if (item && item.title) {
-          return <TodoItem key={item.id} id={item.id} title={item.title} checked={item.isDone} />;
+          return <TodoItem key={item.id} id={item.id} title={item.title} checked={item.isDone} priority={item.priority} />;
       }
-      return <TodoItem key={22} id={1} title={'item.title'} checked={true} />;//тут были шаманские фокусы т.к. как то попал null элемент в LS и 
+      return <TodoItem key={22} id={1} title={'item.title'} checked={true} priority={1} />;//тут были шаманские фокусы т.к. как то попал null элемент в LS и 
                                                                               //слишком долго пытался как - то это пофиксить в итоге просто сбросил хранилище
   });
 

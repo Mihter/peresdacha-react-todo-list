@@ -54,8 +54,7 @@ export const useDeleteTodoItem = () => {
     };
 };
 
-export const useUpdateTodoItem = () =>
-{
+export const useUpdateTodoItem = () => {
     const client = useQueryClient();
 
     const { mutate } = useMutation({
@@ -65,6 +64,25 @@ export const useUpdateTodoItem = () =>
         },
         onSuccess: () => {
             console.log("обновляем данные");
+            client.invalidateQueries(['todo']);
+        },
+    });
+
+    return {
+        mutate
+    };
+};
+
+export const useUpdatePriorityTodoItem = () => {
+    const client = useQueryClient();
+
+    const { mutate } = useMutation({
+        mutationFn: ({ id, priority }) => {
+            console.log("Sturt prioritize");
+            LocalStorage.updateTodoItemPriorityFromLocalStorage(id, priority);
+        },
+        onSuccess: () => {
+            console.log("update data");
             client.invalidateQueries(['todo']);
         },
     });
