@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\common",
+    "\\src\\components\\TodoItem",
+    "\\src\\components\\TodoItems",
+    "\\src\\components\\TodoItems\\components",
+    "\\src\\data",
+    "\\src\\data\\entity",
+    "\\src\\data\\services"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\src\\components\\TodoItem\\TodoItem.jsx",
   "PreviewInSolutionExplorer": false
 }

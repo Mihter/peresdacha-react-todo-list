@@ -13,12 +13,12 @@ const checkedCss = css`
   background-position: center;
   background-repeat: no-repeat;
 `
-
+//поставил минимум 20х20 чтобы не сжимались
 export const CheckboxContainer = styled.span(props => {
   return `
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     border: 2px solid #C4C4C4;
     border-radius: 6px;
     cursor: pointer;
