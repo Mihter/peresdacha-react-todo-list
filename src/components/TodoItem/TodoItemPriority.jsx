@@ -28,7 +28,7 @@ export const TodoItemPriorityConteiner = styled.span(props => {
 
 
   `;
-});//    background-color:red;
+});
 
 
 export const TodoItemPriority = ({ id, priority }) => {

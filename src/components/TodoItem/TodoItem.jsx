@@ -37,7 +37,7 @@ export const TodoItem = ({id, title, checked, priority }) =>
 
     const handleDelete = () =>
     {
-        const isDelete = confirm(`Удалить элемент "${title}""${id}""${priority}" ? `);
+        const isDelete = confirm(`Delete element: "${title}""${id}""${priority}" ? `);
         if (isDelete) {
             deleteTodoItem({id});
         }

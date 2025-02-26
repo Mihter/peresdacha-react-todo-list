@@ -21,9 +21,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/.vs/peresdacha-react-app/FileContentIndex/4f7bc0c7-b070-4ef7-bb03-6e462b0f5903.vsidx
-/.vs/peresdacha-react-app/FileContentIndex/55a543a5-47fb-416a-846a-0d5b13a03fe3.vsidx
-/.vs/peresdacha-react-app/FileContentIndex/801e8f1a-e314-4228-b7d9-beffade64cfc.vsidx
-/.vs/peresdacha-react-app/FileContentIndex/c1922b27-572e-409c-a078-317a8f3b3a57.vsidx
-/.vs/peresdacha-react-app/FileContentIndex/edfd7600-b5ee-42b3-bb2e-962567d65f14.vsidx
-/.vs/peresdacha-react-app/FileContentIndex/b969fdc3-bf05-45d0-aaea-ec7392f407dd.vsidx
+/.vs
