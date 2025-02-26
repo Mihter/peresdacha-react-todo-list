@@ -17,7 +17,8 @@ const Root = styled.div(props => {
     display: flex;
     gap: 9px;
     align-items: center;
-    padding: 5px 0;
+    padding: 5px 5px;
+    border-radius: 10px;
     ${props.priority === 1 ? greenPriorityCss : ''}
     ${ props.priority === 2 ? yellowPriorityCss : ''}
     ${ props.priority === 3 ? redPriorityCss : ''}

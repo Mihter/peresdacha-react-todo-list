@@ -22,10 +22,16 @@ export const TodoItems = () => {
   // И формирует в filteredBySearchItems новый массив элементов, для которых колбек вернул true
   // Для проверки вхождения подстроки в строку нужно использовать indexOf
   const filteredBySearchItems = todoItems.filter((todoItem) => {
-
-      const clearedTodoItemTitle = todoItem.title.replace(/\s+/g, '').toLowerCase();//очистка от пробелов + приведение к одному из регистров
       const clearedSearchValue = searchValue.replace(/\s+/g, '').toLowerCase();//очистка от пробелов + приведение к одному из регистров
+      if (clearedSearchValue.length < 3)
+      {
+          return true;//просто возвращаю true как и в начале выводя весь список
+      }
+      
+      const clearedTodoItemTitle = todoItem.title.replace(/\s+/g, '').toLowerCase();//очистка от пробелов + приведение к одному из регистров
       const isSearched = clearedTodoItemTitle.indexOf(clearedSearchValue) >= 0;//проверка вхождения строки поиска в строку заголовка
+      
+
       return isSearched; // Возвращаем true, если подстрока найдена
   })
 
@@ -34,8 +40,10 @@ export const TodoItems = () => {
       if (item && item.title) {
           return <TodoItem key={item.id} id={item.id} title={item.title} checked={item.isDone} priority={item.priority} />;
       }
-      return <TodoItem key={22} id={1} title={'item.title'} checked={true} priority={1} />;//тут были шаманские фокусы т.к. как то попал null элемент в LS и 
-                                                                              //слишком долго пытался как - то это пофиксить в итоге просто сбросил хранилище
+      return <TodoItem key={22} id={1} title={'item.title'} checked={true} priority={1} />;//тут были шаманские фокусы т.к. как то попал null элемент 
+                                                                                        //в LS и слишком долго пытался как - то это пофиксить в итоге
+                                                                                        //просто сбросил хранилище
+                                                                              
   });
 
   return (

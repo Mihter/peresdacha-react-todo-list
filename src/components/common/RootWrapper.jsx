@@ -18,10 +18,10 @@ const Main = styled.div`
   background-color: #F4F4F4;
   box-shadow: 16px 12px 54px 0 rgba(0,0,0,0.2);
   font-family: Inter;
-  padding: 41px 38px 57px 38px;
+  padding: 41px 30px 57px 30px;
   position: relative;
   color: #413F3F;
-`;
+`;//чуть уменьшил левый правый паддинг
 
 const TopImage = styled.img`
   position: absolute;
