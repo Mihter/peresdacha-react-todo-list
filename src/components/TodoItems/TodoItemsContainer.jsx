@@ -5,6 +5,8 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-height: 350px; 
+  overflow-y: auto; 
 `;
 
 export const TodoItemsContainer = (props) => { 
