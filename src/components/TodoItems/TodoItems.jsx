@@ -4,7 +4,8 @@ import {TodoItemsContainer} from './TodoItemsContainer';
 import {NewTodoItem} from '../TodoItem/NewTodoItem';
 import {TodoItem} from '../TodoItem/TodoItem';
 import {useData} from '../../data/hooks/useData';
-import {SearchInput} from './components/SearchInput';
+import { SearchInput } from './components/SearchInput';
+import { ButtonContainer, ResetButton, SortButton } from './components/ButtonContainer';
 
 export const TodoItems = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -21,40 +22,7 @@ export const TodoItems = () => {
     );
   }
 
-    // Создаем стилизованные кнопки
-    const SortButton = styled.button`
-    background-color: #4CAF50; 
-    color: white; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-
-    &:hover {
-        background-color: #45a049; 
-    }
-`;
-
-    const ResetButton = styled.button`
-    background-color: #f44336; 
-    color: white; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-
-    &:hover {
-        background-color: #e53935; 
-    }
-`;
-
-    const ButtonContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    gap: 10px; 
-    margin-bottom: 16px; 
-`;
+  //убрал стили кнопок в отделный компонент
 
   // Фукнция filter вызывает для каждого элемента переданный ей колбек
   // И формирует в filteredBySearchItems новый массив элементов, для которых колбек вернул true
