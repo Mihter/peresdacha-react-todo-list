@@ -2,7 +2,10 @@ import React from 'react';
 import {styled} from 'styled-components';
 
 
-const Input = styled.input``;
+const Input = styled.input`
+    margin-bottom: 10px;
+    min-height: 25px;
+`;
 
 export const SearchInput = ({value, setValue}) => {
   const onInputChange = (event) => {

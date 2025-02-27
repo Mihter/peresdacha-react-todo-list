@@ -9,7 +9,7 @@ import {SearchInput} from './components/SearchInput';
 export const TodoItems = () => {
   const [searchValue, setSearchValue] = useState('');
 
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortOrder, setSortOrder] = useState('desc');
 
   const {data: todoItems, isLoading} = useData();
 
@@ -52,7 +52,7 @@ export const TodoItems = () => {
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    gap: 16px; 
+    gap: 10px; 
     margin-bottom: 16px; 
 `;
 
@@ -88,7 +88,7 @@ export const TodoItems = () => {
     const toggleSortOrder = () => {
         setSortOrder(prevOrder => (prevOrder === 'asc' ? 'desc' : 'asc'));
     };
-
+    // Обработчик для сброса ключа сортировки
     const drainTank = () => {
         setSortOrder(prevOrder => (prevOrder === 'asc' ? '' : ''));
     };
@@ -115,8 +115,9 @@ export const TodoItems = () => {
                 </SortButton>
                 <ResetButton onClick={drainTank}>
                     Смыть за собой?
+                    <br></br>
+                    (сбросить сортировку)
                 </ResetButton>
-
             </ButtonContainer>
             <SearchInput value={searchValue} setValue={setSearchValue} />
             <TodoItemsContainer>
