@@ -10,7 +10,7 @@ import { ButtonContainer, ResetButton, SortButton } from './components/ButtonCon
 export const TodoItems = () => {
   const [searchValue, setSearchValue] = useState('');
 
-  const [sortOrder, setSortOrder] = useState('desc');
+  const [sortOrder, setSortOrder] = useState('');
 
   const {data: todoItems, isLoading} = useData();
 
@@ -42,13 +42,13 @@ export const TodoItems = () => {
 
     //использовать метод sort
     const sortedItems = filteredBySearchItems.sort((a, b) => {
-        if (sortOrder === 'asc') {
+        if (sortOrder === 'asc')
+        {
             return a.priority - b.priority;
-        } else if (sortOrder === 'desc') {
-            return b.priority - a.priority;
         }
-        else {
-            return todoItems;
+        else
+        {
+            return b.priority - a.priority;
         }
     });
 
